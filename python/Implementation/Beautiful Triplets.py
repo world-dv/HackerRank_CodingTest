@@ -17,12 +17,9 @@ import sys
 
 def beautifulTriplets(d, arr):
     answer = 0
-    for i in range(len(arr)):
-        for j in range(i + 1, len(arr)):
-            if arr[j] - arr[i] == d:
-                for k in range(j + 1, len(arr)):
-                    if arr[k] - arr[j] == d:
-                        answer += 1
+    for i in arr:
+        if i in arr and i + d in arr and i + 2 * d in arr:
+            answer += 1
     return answer
 
 if __name__ == '__main__':
